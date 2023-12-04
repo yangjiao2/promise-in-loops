@@ -61,6 +61,12 @@ let promises = timeouts.map((nextTimeout) => {
   return testPromise(nextTimeout);
 });
 
+
+// Use for...of loop to iterate over timeouts and create promises
+for (const nextTimeout of timeouts) {
+  promises.push(testPromise(nextTimeout));
+}
+
 // Use Promise.all to wait for all promises to resolve
 Promise.all(promises)
   .then((results) => {
