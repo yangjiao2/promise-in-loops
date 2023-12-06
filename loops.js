@@ -64,12 +64,6 @@ let timeouts = [3000, 2000, 1000, 4000];
 let results = [];
 const start = Date.now();
 
-// Use array.map to create an array of promises
-let promises = timeouts.map((nextTimeout) => {
-  
-  return testPromise(nextTimeout);
-});
-
 
 // Use for...of loop to iterate over timeouts and create promises
 for (const nextTimeout of timeouts) {
@@ -111,7 +105,6 @@ const start = Date.now();
 
 // Use array.map to create an array of promises
 let promises = timeouts.map((nextTimeout) => {
-  
   return testPromise(nextTimeout);
 });
 
