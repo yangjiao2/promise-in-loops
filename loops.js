@@ -1,3 +1,12 @@
+function testPromise(time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`Processing ${time}`);
+      resolve(time);
+    }, time);
+  });
+}
+
 /*
   For of loop: unpack items from array and execute async function in input order with main thread blocking for each.
   This is conceptually same as Array.reduce (which listed down below).
